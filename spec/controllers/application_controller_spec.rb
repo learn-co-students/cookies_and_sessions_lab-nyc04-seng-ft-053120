@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe ApplicationController do
@@ -11,8 +13,8 @@ RSpec.describe ApplicationController do
       expect(controller.cart).to eq session[:cart]
     end
 
-    it "returns the existing cart if one already exists" do
-      groceries = ['apples', 'bananas', 'pears']
+    it 'returns the existing cart if one already exists' do
+      groceries = %w[apples bananas pears]
       @request.session[:cart] = groceries
       expect(controller.cart).to eq @request.session[:cart]
       expect(controller.cart).to eq groceries
