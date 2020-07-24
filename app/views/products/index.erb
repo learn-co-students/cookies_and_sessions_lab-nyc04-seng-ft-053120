@@ -1,0 +1,11 @@
+<%= form_tag "/" %>
+  <%= text_field_tag "product" %>
+  <br><br>
+  <%= submit_tag "add to cart"%>
+
+<br>
+
+
+  <% cart.each do |item| %>
+    <%= item %>
+  <% end %>
